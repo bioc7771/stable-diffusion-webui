@@ -164,7 +164,7 @@ def extension_table():
             ext_status = ext.status
 
         style = ""
-        if shared.opts.disable_all_extensions == "extra" and not ext.is_builtin or shared.opts.disable_all_extensions == "all":
+        if shared.cmd_opts.disable_extensions == "extra" or shared.opts.disable_all_extensions == "extra" and not ext.is_builtin or shared.cmd_opts.disable_extensions == "all" or shared.opts.disable_all_extensions == "all":
             style = STYLE_PRIMARY
 
         version_link = ext.version
